@@ -1,0 +1,203 @@
+/* Box Model Hack */
+*,
+*::before,
+*::after {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     border: none;
+     -moz-box-sizing: border-box;
+}
+
+/* Font imports */
+
+@font-face {
+     font-family: 'Overpass-400';
+     src: url(/assets/fonts/Overpass-Regular.ttf);
+     font-display: swap;
+     font-weight: 400;
+}
+
+@font-face {
+     font-family: 'Overpass-700';
+     src: url(/assets/fonts/Overpass-Bold.ttf);
+     font-display: swap;
+     font-weight: 700;
+}
+
+/* Reusable variables */
+
+:root {
+     --White: hsl(0, 0%, 100%);
+     --LightGrey: hsl(217, 12%, 63%);
+     --MediumGrey: hsl(216, 12%, 54%);
+     --DarkBlue: hsl(213, 19%, 18%);
+     --VeryDarkBlue: hsl(216, 12%, 8%);
+     --Orange: hsl(25, 97%, 53%);
+
+     --bodyMaxWidth: 1440px;
+
+     --fsPara: clamp(0.9375rem, 0.7768rem + 0.8036vw, 1.5rem);
+     --fsHeading: clamp(1.3125rem, 1.1875rem + 0.625vw, 1.75rem);
+
+     --mediaQuery: 60rem;
+
+     --ff400: 'Overpass-400';
+     --ff700: 'Overpass-700';
+
+     --padding1: 2.5em;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family: var(--ff400);
+     user-select: none;
+     background-color: var(--VeryDarkBlue);
+     flex-flow: column wrap;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.wrapper {
+     margin: 0 2em;
+     line-height: 1.5;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.star-logo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 3rem;
+     width: 3rem;
+     background-color: var(--LightGrey);
+     border-radius: 50%;
+}
+
+h1 {
+     font-family: var(--ff700);
+     font-size: var(--fsHeading);
+     color: var(--White);
+}
+
+.card-selection,
+.card-thankyou {
+     background-color: var(--DarkBlue);
+     padding: var(--padding1);
+     color: var(--White);
+     border-radius: 15px;
+     max-width: 28.125rem;
+     margin-top: 1em;
+     margin-bottom: 1em;
+}
+
+.card-thankyou {
+     text-align: center;
+}
+
+.card__text-content,
+.card_thankyou-text {
+     display: grid;
+     gap: 25px;
+     color: var(--LightGrey);
+     margin-bottom: 1em;
+}
+
+.card-selection {
+     display: grid;
+     gap: 25px;
+}
+
+.hidden {
+     display: none;
+}
+
+form {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(0, 50px));
+     gap: 1.875rem;
+}
+
+label {
+     background-color: grey;
+     display: flex;
+     height: 3rem;
+     width: 3rem;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+     font-size: 1rem;
+}
+
+label:is(:hover, :active, :focus) {
+     cursor: pointer;
+     background-color: var(--Orange);
+}
+
+
+
+input[type="radio"] {
+     display: none;
+}
+
+button {
+     padding: .5em 1em;
+     background-color: var(--Orange);
+     border-radius: 50px;
+     color: var(--White);
+     font-family: var(--ff700);
+     display: block;
+     border: 5px dotted transparent;
+     text-transform: uppercase;
+     transition: all .5s ease-in;
+}
+
+.rating--text {
+     background-color: var(--LightGrey);
+     border-radius: 50px;
+     padding: 1em 0;
+     margin-top: 1em;
+     color: var(--Orange);
+}
+
+button:is(:hover, :focus:, :active) {
+     border: 5px dotted var(--LightGrey);
+     cursor: pointer;
+     background-color: var(--White);
+     color: var(--Orange);
+}
+
+.error {
+     color: red;
+     display: none;
+}
+
+.attribution {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding: .5em 0;
+     text-align: center;
+     color: var(--White);
+}
+
+.return-btn {
+     margin: 0 auto;
+}
+
+.active {
+     background-color: var(--Orange);
+}
