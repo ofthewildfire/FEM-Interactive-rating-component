@@ -124,7 +124,7 @@ h1 {
      display: none;
 }
 
-form {
+fieldset {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(0, 50px));
      gap: 1.875rem;
@@ -138,12 +138,15 @@ label {
      align-items: center;
      justify-content: center;
      border-radius: 50%;
-     font-size: 1rem;
+     font-size: 1.25rem;
+     border: 1px solid transparent;
 }
 
-label:is(:hover, :active, :focus) {
+label:is(:hover, :focus) {
      cursor: pointer;
-     background-color: var(--Orange);
+     /* background-color: var(--DarkBlue); */
+     opacity: .5;
+     border: 1px solid var(--White);
 }
 
 
@@ -153,7 +156,7 @@ input[type="radio"] {
 }
 
 button {
-     padding: .5em 1em;
+     padding: 0.5em 1em;
      background-color: var(--Orange);
      border-radius: 50px;
      color: var(--White);
@@ -162,6 +165,7 @@ button {
      border: 5px dotted transparent;
      text-transform: uppercase;
      transition: all .5s ease-in;
+     font-size: 1.25rem;
 }
 
 .rating--text {
@@ -172,7 +176,7 @@ button {
      color: var(--Orange);
 }
 
-button:is(:hover, :focus:, :active) {
+button:is(:hover, :focus, :active) {
      border: 5px dotted var(--LightGrey);
      cursor: pointer;
      background-color: var(--White);

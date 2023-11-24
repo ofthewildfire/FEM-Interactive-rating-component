@@ -1,5 +1,6 @@
 const selectionBtns = document.querySelectorAll('input[type="radio"]')
 const buttonsList = document.querySelectorAll('input[type="radio"]')
+const labelList = document.querySelectorAll("label")
 const displayRating = document.querySelector(".rating")
 const submitBtn = document.querySelector(".submit-btn")
 const selectCard = document.querySelector(".card-selection")
